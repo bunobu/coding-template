@@ -1,0 +1,74 @@
+/* >>> Reset CSS */
+// https://coliss.com/articles/build-websites/operation/css/my-custom-css-reset.html
+
+/*
+  1. より直感的なボックスサイズのモデルを使用
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. デフォルトのマージンを削除
+*/
+* {
+  margin: 0;
+}
+/*
+  3. 高さは%ベースを使用
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  タイポグラフィの微調整
+  4. アクセシブルなline-heightを追加
+  5. テキストのレンダリングを改善
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. メディア要素のデフォルトを改善
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. フォームのfontに関するデフォルトを削除
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. テキストのオーバーフローを回避
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. ルートのスタックコンテキストを作成
+*/
+// #root,
+// #__next {
+//   isolation: isolate;
+// }
+
+/* <<< Reset CSS */
