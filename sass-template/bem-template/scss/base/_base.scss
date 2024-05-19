@@ -1,4 +1,5 @@
 /* >>> base - サイト共通のスタイル */
+@use "../setting/" as *;
 
 html,
 body {
@@ -7,7 +8,7 @@ body {
 }
 
 body {
-  color: black;
+  color: $color-red;
   font-family: sans-serif;
 }
 
