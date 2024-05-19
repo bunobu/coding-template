@@ -1,5 +1,5 @@
 /* >>> base - サイト共通のスタイル */
-@use "../global" as *;
+@use "../global" as g;
 
 html,
 body {
@@ -8,13 +8,14 @@ body {
 }
 
 body {
-  color: $color-red;
+  color: g.$color-red;
   font-family: sans-serif;
 }
 
-.test {
-  @include mq() {
+.test-base {
+  @include g.mq() {
     height: 60px;
+    color: g.$color-red;
   }
 }
 

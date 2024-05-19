@@ -1,12 +1,8 @@
 // メディク絵利用のmixを定義
-@use "../setting" as *;
-
-h1 {
-  color: $color-red;
-}
+@use "../setting" as g;
 
 @mixin mq($breakpoint: pc) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+  @media #{map-get(g.$breakpoints, $breakpoint)} {
     @content;
   }
 }

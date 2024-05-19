@@ -1,0 +1,9 @@
+@use "../../global/" as g;
+
+.test-page {
+  font-size: 16px;
+  @include g.mq("pc") {
+    font-size: 20px;
+    color: g.$color-red;
+  }
+}

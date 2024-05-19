@@ -1,6 +1,6 @@
 @use "../global/" as g;
 
-.test-module {
+.test-plugin {
   font-size: 16px;
   @include g.mq("pc") {
     font-size: 20px;
