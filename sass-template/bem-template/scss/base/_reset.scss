@@ -66,9 +66,9 @@ h6 {
 /*
   9. ルートのスタックコンテキストを作成
 */
-#root,
-#__next {
-  isolation: isolate;
-}
+// #root,
+// #__next {
+//   isolation: isolate;
+// }
 
 /* <<< Reset CSS */
