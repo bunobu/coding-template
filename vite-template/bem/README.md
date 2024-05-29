@@ -1,3 +1,3 @@
 # Vite BEM テンプレート
 
-Web 制作用のテンプレート
+### Vite - Web 制作用 - BEM テンプレート
