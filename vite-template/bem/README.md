@@ -15,3 +15,6 @@ npmやyarnでインストールした情報や、依存関係、スクリプト�
 
 `.package-lock.json`<br>
 パッケージのバージョンを詳細に記録したファイル
+
+`postcss.config.cjs`<br>
+PostCSSの設定をするファイル。CSSのコンパイルについての設定をする。
