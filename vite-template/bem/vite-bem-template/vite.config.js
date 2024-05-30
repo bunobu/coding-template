@@ -1,15 +1,34 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import { log } from "console";
+
+import handlebars from "vite-plugin-handlebars";
+
+// HTMLで出し分ける情報
+const pageDate = {
+  "/index.html": {
+    isHome: true,
+    title: "indexページだよ",
+  },
+  "/hoge.html": {
+    isHome: false,
+    title: "hogeページだよ",
+  },
+};
 
 export default defineConfig({
   root: "./src", // 開発ディレクトリの設定
+
+  /**
+   * >>> ビルド設定
+   */
   build: {
     // ファイルの出力先の設定
     outDir: "../dist",
     emptyOutDir: true,
 
-    // ファイルの出力設定
+    /**
+     * ファイルの出力設定
+     */
     rollupOptions: {
       output: {
         // assetsファイルの設定
@@ -34,4 +53,26 @@ export default defineConfig({
       },
     },
   },
+  /**
+   * <<< ビルド設定
+   */
+
+  /**
+   * >>> pluginの設定
+   */
+  plugins: [
+    // htmlをバンドル出来るようにする
+    handlebars({
+      // コンポーネント化するディレクトリを指定
+      partialDirectory: resolve(__dirname, "./src/components"),
+
+      // 各ページ毎の変数を読み込む
+      context(pagePath) {
+        return pageDate[pagePath];
+      },
+    }),
+  ],
+  /**
+   * <<< pluginの設定
+   */
 });
