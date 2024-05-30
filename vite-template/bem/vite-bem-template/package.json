@@ -13,5 +13,11 @@
     "postcss": "^8.4.38",
     "sass": "^1.77.3",
     "vite": "^5.2.0"
-  }
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
 }
