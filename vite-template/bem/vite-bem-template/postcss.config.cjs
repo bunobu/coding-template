@@ -6,8 +6,12 @@
 module.exports = {
   plugins: {
     autoprefixer: {}, // ベンタープレフィックスをつける
+
+    // メディアクエリをソートしてまとめる
     "postcss-sort-media-queries": {
       sort: "mobile-first", // default value
-    }, // メディアクエリをソートしてまとめる
+    },
+
+    "css-declaration-sorter": { order: "smacss" },
   },
 };

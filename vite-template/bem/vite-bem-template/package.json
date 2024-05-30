@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "css-declaration-sorter": "^7.2.0",
     "postcss": "^8.4.38",
     "postcss-sort-media-queries": "^5.2.0",
     "sass": "^1.77.3",
