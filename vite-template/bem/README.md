@@ -1,3 +1,17 @@
 # Vite BEM テンプレート
+Vite - Web制作用 - BEMテンプレート
 
-### Vite - Web 制作用 - BEM テンプレート
+<br>
+
+## 設定ファイル
+`vite.config.js`<br>
+viteの設定をするファイル。主にファイルの入出力の設定をする。
+
+`.gitignore`<br>
+gitで管理しないディレクトリやファイルを設定する。
+
+`.package.json`<br>
+npmやyarnでインストールした情報や、依存関係、スクリプトの設定ファイル
+
+`.package-lock.json`<br>
+パッケージのバージョンを詳細に記録したファイル

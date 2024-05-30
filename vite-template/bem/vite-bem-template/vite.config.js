@@ -15,6 +15,7 @@ export default defineConfig({
         // assetsファイルの設定
         assetFileNames: (assetInfo) => {
           if (`\.css$`) {
+            console.log(assetInfo.name);
             return `assets/css/[name][extname]`;
           }
 
