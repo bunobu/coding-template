@@ -4,7 +4,10 @@
  */
 
 module.exports = {
-  plugin: {
-    autoprefixer: {},
+  plugins: {
+    autoprefixer: {}, // ベンタープレフィックスをつける
+    "postcss-sort-media-queries": {
+      sort: "mobile-first", // default value
+    }, // メディアクエリをソートしてまとめる
   },
 };

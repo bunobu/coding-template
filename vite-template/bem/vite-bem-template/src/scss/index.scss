@@ -1,3 +1,17 @@
-.scss {
+.scss-a {
   color: red;
+  display: flex;
+  transition: all 0.3s ease;
+
+  @media screen and (min-width: 768px) {
+    color: blue;
+  }
+}
+
+.scss-b {
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 }

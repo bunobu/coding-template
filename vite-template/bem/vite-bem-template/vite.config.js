@@ -3,9 +3,9 @@ import { resolve } from "path";
 import { log } from "console";
 
 export default defineConfig({
-  root: "./src", //開発ディレクトリの設定
+  root: "./src", // 開発ディレクトリの設定
   build: {
-    //ファイルの出力先の設定
+    // ファイルの出力先の設定
     outDir: "../dist",
     emptyOutDir: true,
 
