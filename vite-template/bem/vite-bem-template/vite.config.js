@@ -17,6 +17,7 @@ const pageDate = {
 
 export default defineConfig({
   root: "./src", // 開発ディレクトリの設定
+  base: "./", // 出力されるファイルのパスを相対パスにする
 
   /**
    * >>> ビルド設定
