@@ -34,24 +34,25 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
 
-    /**
-     * ファイルの出力設定
-     */
     rollupOptions: {
+      /**
+       * ファイルの出力設定
+       */
       output: {
+        // // jsファイルの設定
+        chunkFileNames: "assets/js/[name].js",
+        entryFileNames: "assets/js/main.js",
+
         // assetsファイルの設定
         assetFileNames: (assetInfo) => {
-          if (`\.css$`) {
-            console.log(assetInfo.name);
-            return `assets/css/[name][extname]`;
+          if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetInfo.name)) {
+            return "assets/images/[name].[ext]";
           }
-
-          return `assets/[name][extname]`;
+          if (/\.css$/.test(assetInfo.name)) {
+            return "assets/css/style.[ext]";
+          }
+          return "assets/[name].[ext]";
         },
-
-        // jsファイルの設定
-        chunkFileNames: "assets/js/[name].js",
-        entryFileNames: "assets/js/[name].js",
       },
 
       input: {
