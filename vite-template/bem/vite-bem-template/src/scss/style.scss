@@ -1,3 +1,7 @@
+@use "@global" as g;
+@use "base/**/*.scss";
+@use "parts/**/*.scss";
+
 .scss-a {
   color: red;
   display: flex;
@@ -10,6 +14,7 @@
 
 .scss-b {
   font-size: 16px;
+  color: g.$color-red;
 
   @media screen and (min-width: 768px) {
     font-size: 20px;

@@ -1,7 +1,9 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
+import { join } from "path";
 
 import handlebars from "vite-plugin-handlebars";
+import sassGlobImports from "vite-plugin-sass-glob-import";
 
 // HTMLで出し分ける情報
 const pageDate = {
@@ -18,6 +20,11 @@ const pageDate = {
 export default defineConfig({
   root: "./src", // 開発ディレクトリの設定
   base: "./", // 出力されるファイルのパスを相対パスにする
+
+  // sassで全体で使用したい変数ディレクトリをエイリアスで使えるようにする
+  resolve: {
+    alias: { "@global/": join(__dirname, "./src/scss/global/") },
+  },
 
   /**
    * >>> ビルド設定
