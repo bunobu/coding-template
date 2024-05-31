@@ -72,6 +72,8 @@ export default defineConfig({
         return pageDate[pagePath];
       },
     }),
+
+    sassGlobImports(),
   ],
   /**
    * <<< pluginの設定
