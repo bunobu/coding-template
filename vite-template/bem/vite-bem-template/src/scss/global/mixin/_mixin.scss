@@ -1,0 +1,8 @@
+// メディアクエリのmixinを定義
+@use "../setting" as g;
+
+@mixin mq($breakpoint: pc) {
+  @media #{map-get(g.$breakpoints, $breakpoint)} {
+    @content;
+  }
+}

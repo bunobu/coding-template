@@ -1,0 +1,22 @@
+/* >>> base - サイト共通のスタイル */
+@use "@global" as g;
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: g.$color-red;
+  font-family: sans-serif;
+}
+
+.test-base {
+  @include g.mq() {
+    height: 60px;
+    color: g.$color-red;
+  }
+}
+
+/* <<< base - サイト共通のスタイル */
