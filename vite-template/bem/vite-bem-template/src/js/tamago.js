@@ -1,1 +1,3 @@
-console.log("tamago");
+export const tamago = () => {
+  console.log("tamago");
+};

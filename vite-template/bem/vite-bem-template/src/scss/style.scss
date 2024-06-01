@@ -6,6 +6,9 @@
   color: red;
   display: flex;
   transition: all 0.3s ease;
+  background: url(../img/100KB1.gif) center 100% no-repeat;
+  height: 200px;
+  margin-bottom: 200px;
 
   @media screen and (min-width: 768px) {
     color: blue;

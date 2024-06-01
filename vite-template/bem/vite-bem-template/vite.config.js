@@ -4,6 +4,7 @@ import { join } from "path";
 
 import handlebars from "vite-plugin-handlebars";
 import sassGlobImports from "vite-plugin-sass-glob-import";
+import viteImagemin from "vite-plugin-imagemin";
 
 // HTMLで出し分ける情報
 const pageDate = {
@@ -18,8 +19,11 @@ const pageDate = {
 };
 
 export default defineConfig({
-  root: "./src", // 開発ディレクトリの設定
   base: "./", // 出力されるファイルのパスを相対パスにする
+  server: {
+    port: 8888,
+  },
+  root: "./src", // 開発ディレクトリの設定
 
   // sassで全体で使用したい変数ディレクトリをエイリアスで使えるようにする
   resolve: {
@@ -45,13 +49,20 @@ export default defineConfig({
 
         // assetsファイルの設定
         assetFileNames: (assetInfo) => {
-          if (/\.( gif|jpeg|jpg|png|svg|webp| )$/.test(assetInfo.name)) {
-            return "assets/images/[name].[ext]";
+          let extType = assetInfo.name.split(".")[1];
+          //Webフォントファイルの振り分け
+          if (/ttf|otf|eot|woff|woff2/i.test(extType)) {
+            extType = "fonts";
           }
-          if (/\.css$/.test(assetInfo.name)) {
-            return "assets/css/style.[ext]";
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = "img";
+            return `assets/${extType}/[name][extname]`;
           }
-          return "assets/[name].[ext]";
+          //ビルド時のCSS名を明記してコントロールする
+          if (extType === "css") {
+            return `assets/css/style.css`;
+          }
+          return `assets/${extType}/[name][extname]`;
         },
       },
 
@@ -70,7 +81,7 @@ export default defineConfig({
    * >>> pluginの設定
    */
   plugins: [
-    // htmlをバンドル出来るようにする
+    // プラグイン - htmlバンドル
     handlebars({
       // コンポーネント化するディレクトリを指定
       partialDirectory: resolve(__dirname, "./src/components"),
@@ -80,8 +91,36 @@ export default defineConfig({
         return pageDate[pagePath];
       },
     }),
-
+    // プラグイン - sassバンドル
     sassGlobImports(),
+
+    viteImagemin({
+      gifsicle: {
+        optimizationLevel: 7,
+        interlaced: false,
+      },
+      optipng: {
+        optimizationLevel: 7,
+      },
+      mozjpeg: {
+        quality: 20,
+      },
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4,
+      },
+      svgo: {
+        plugins: [
+          {
+            name: "removeViewBox",
+          },
+          {
+            name: "removeEmptyAttrs",
+            active: false,
+          },
+        ],
+      },
+    }),
   ],
   /**
    * <<< pluginの設定
