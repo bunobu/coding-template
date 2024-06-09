@@ -1,0 +1,15 @@
+@use "sass:math";
+@use "../setting/" as s;
+
+// pxをremに変換
+@function rem($px, $content: strip-unit(s.$base-font-size)) {
+  @return math.div($px, $content) * 1rem;
+}
+
+// 単位を削除する
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
