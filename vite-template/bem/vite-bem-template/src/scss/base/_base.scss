@@ -10,7 +10,7 @@ body {
 body {
   color: g.$color-red;
   font-family: sans-serif;
-  font-size: g.rem(16);
+  font-size: g.rem(16) !important;
 }
 
 .test-base {
