@@ -1,0 +1,38 @@
+// 関数を定義する
+
+@use "sass:math";
+@use "../setting/" as s;
+
+// 関数 - pxをremに変換して、clampで最小値と最大値を設定する
+@function rem($px, $content: strip-unit(s.$base-font-size)) {
+  // @return math.div($px, $content) * 1rem;
+
+  // rem変換
+  $strip-px: strip-unit($px);
+  $rem-conversion: math.div($strip-px, $content) * 1rem;
+  // // clampで最小値と最大値を設定して返す(最低が12px,推奨は引数の値,最大も引数の値)
+  @return clamp(12px, $rem-conversion, #{$strip-px}px);
+}
+
+// 関数 - 単位を削除する
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return math.div($number, ($number * 0 + 1));
+  }
+  @return $number;
+}
+
+// 関数 - z-indexを$layerから取り出す
+@function z-index($z-index) {
+  @return map-get(s.$z-index-list, $z-index);
+}
+
+// 関数 - line-heightの計算
+@function l-height($height, $pixel) {
+  @return math.div($height, $pixel);
+}
+
+// 関数 - letter-spacing計算
+@function l-spacing($spacing) {
+  @return math.div($spacing, 1000) * 1em;
+}
