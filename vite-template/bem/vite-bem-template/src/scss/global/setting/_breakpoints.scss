@@ -1,6 +1,34 @@
+// ブレイクポイントの設定
+/* Mobileファースト */
+$bp-xs: 375px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
+
 $breakpoints: (
-  // 767px(スマホ用の表示)
-  "sp": "screen and (max-width:767px)",
-  // 767px(PC用の表示)
-  "pc": "screen and (min-width:768px)"
+  "xs": "screen and (min-width: #{$bp-xs})",
+  "sm": "screen and (min-width: #{$bp-sm})",
+  "md": "screen and (min-width: #{$bp-md})",
+  "lg": "screen and (min-width: #{$bp-lg})",
+  "xl": "screen and (min-width: #{$bp-xl})",
+  "2xl": "screen and (min-width: #{$bp-2xl})",
 );
+
+// /* Desktopファースト */
+// $bp-xs: 374px;
+// $bp-sm: 639px;
+// $bp-md: 767px;
+// $bp-lg: 1023px;
+// $bp-xl: 1279px;
+// $bp-2xl: 1535px;
+
+// $breakpoints: (
+//   "xs": "screen and (max-width: #{$bp-xs})",
+//   "sm": "screen and (max-width: #{$bp-sm})",
+//   "md": "screen and (max-width: #{$bp-md})",
+//   "lg": "screen and (max-width: #{$bp-lg})",
+//   "xl": "screen and (max-width: #{$bp-xl})",
+//   "2xl": "screen and (max-width: #{$bp-2xl})",
+// );

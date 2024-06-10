@@ -1,7 +1,10 @@
+// mixinを定義する
+
 @use "../setting" as s;
 
 // メディアクエリを簡易化(breakpointはsetting/_breakpoints.scssで定義)
-@mixin mq($breakpoint: pc) {
+// mq("ブレクポイント"){}で@media (min-width: ブレクポイント) {}を呼び出す
+@mixin mq($breakpoint: "md") {
   @media #{map-get(s.$breakpoints, $breakpoint)} {
     @content;
   }
