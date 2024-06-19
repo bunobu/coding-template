@@ -1,5 +1,5 @@
 # Vite BEM テンプレート
-Vite - Web制作用 - BEMテンプレート
+### Vite - 静的サイト制作用テンプレート
 
 <br>
 
@@ -18,3 +18,8 @@ npmやyarnでインストールした情報や、依存関係、スクリプト�
 
 `postcss.config.cjs`<br>
 PostCSSの設定をするファイル。CSSのコンパイルについての設定をする。
+
+<br>
+
+## SCSSについて
+### [SCSSについて](./src/scss/README.md)
