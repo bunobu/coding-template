@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { join } from "path";
 
-import handlebars from "vite-plugin-handlebars";
 import sassGlobImports from "vite-plugin-sass-glob-import";
 import viteImagemin from "vite-plugin-imagemin";
 
@@ -81,16 +80,6 @@ export default defineConfig({
    * >>> pluginの設定
    */
   plugins: [
-    // プラグイン - htmlバンドル
-    handlebars({
-      // コンポーネント化するディレクトリを指定
-      partialDirectory: resolve(__dirname, "./src/components"),
-
-      // 各ページ毎の変数を読み込む
-      context(pagePath) {
-        return pageDate[pagePath];
-      },
-    }),
     // プラグイン - sassバンドル
     sassGlobImports(),
 
