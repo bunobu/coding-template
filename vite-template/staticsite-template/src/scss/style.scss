@@ -1,27 +1,7 @@
 @use "@global" as g;
-@use "base/**/*.scss";
-@use "parts/**/*.scss";
-@use "utility/**/*.scss";
-
-.scss-a {
-  color: red;
-  display: flex;
-  transition: all 0.3s ease;
-  background: url(../img/100KB1.gif) center 100% no-repeat;
-  height: 200px;
-  margin-bottom: 200px;
-  font-size: g.rem(16px);
-
-  @include g.mq("md") {
-    color: green;
-  }
-}
-
-.scss-b {
-  font-size: g.rem(18px);
-  color: g.$color-red;
-
-  @include g.mq("md") {
-    color: blue;
-  }
-}
+@use "foundation/**/*.scss";
+@use "layout/**/*.scss";
+@use "library/**/*.scss";
+@use "object/component/**/*.scss";
+@use "object/project/**/*.scss";
+@use "object/utility/**/*.scss";
