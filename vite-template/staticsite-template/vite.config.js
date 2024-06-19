@@ -1,7 +1,14 @@
+/**
+ * 構築で参考にさせてもらったサイト
+ * 構築全般：https://coding-memo.work/development/1274/
+ * markuplintに関して：https://designsupply-web.com/media/programming/7648/
+ * */
+
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import { join } from "path";
 
+import handlebars from "vite-plugin-handlebars";
 import sassGlobImports from "vite-plugin-sass-glob-import";
 import viteImagemin from "vite-plugin-imagemin";
 
@@ -10,10 +17,12 @@ const pageDate = {
   "/index.html": {
     isHome: true,
     title: "indexページだよ",
+    description: "indexページの説明文だよ",
   },
   "/hoge.html": {
     isHome: false,
     title: "hogeページだよ",
+    description: "hogeページの説明文だよ",
   },
 };
 
@@ -80,6 +89,17 @@ export default defineConfig({
    * >>> pluginの設定
    */
   plugins: [
+    // プラグイン - htmlバンドル
+    handlebars({
+      // コンポーネント化するディレクトリを指定
+      partialDirectory: resolve(__dirname, "./src/components"),
+
+      // 各ページ毎の変数を読み込む
+      context(pagePath) {
+        return pageDate[pagePath];
+      },
+    }),
+
     // プラグイン - sassバンドル
     sassGlobImports(),
 
