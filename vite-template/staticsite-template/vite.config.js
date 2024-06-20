@@ -11,6 +11,7 @@ import { join } from "path";
 import handlebars from "vite-plugin-handlebars";
 import sassGlobImports from "vite-plugin-sass-glob-import";
 import viteImagemin from "vite-plugin-imagemin";
+import imageminPlugin from "@macropygia/vite-plugin-imagemin-cache";
 
 // HTMLで出し分ける情報
 const pageDate = {
@@ -89,7 +90,6 @@ export default defineConfig({
    * >>> pluginの設定
    */
   plugins: [
-    // プラグイン - htmlバンドル
     handlebars({
       // コンポーネント化するディレクトリを指定
       partialDirectory: resolve(__dirname, "./src/components"),
@@ -100,34 +100,43 @@ export default defineConfig({
       },
     }),
 
-    // プラグイン - sassバンドル
     sassGlobImports(),
+
+    // キャッシュの対応画像フォーマットはPNG/JPEG/SVGのみ
+    imageminPlugin({
+      exclude: [
+        // "**/old_*.jpg", // 除外パターン
+      ],
+      plugins: {
+        // imageminプラグインの設定
+        optipng: {
+          optimizationLevel: 7,
+        },
+        mozjpeg: {
+          quality: 20,
+        },
+        pngquant: {
+          quality: [0.8, 0.9],
+          speed: 4,
+        },
+        svgo: {
+          plugins: [
+            {
+              name: "removeViewBox",
+            },
+            {
+              name: "removeEmptyAttrs",
+              active: false,
+            },
+          ],
+        },
+      },
+    }),
 
     viteImagemin({
       gifsicle: {
         optimizationLevel: 7,
         interlaced: false,
-      },
-      optipng: {
-        optimizationLevel: 7,
-      },
-      mozjpeg: {
-        quality: 20,
-      },
-      pngquant: {
-        quality: [0.8, 0.9],
-        speed: 4,
-      },
-      svgo: {
-        plugins: [
-          {
-            name: "removeViewBox",
-          },
-          {
-            name: "removeEmptyAttrs",
-            active: false,
-          },
-        ],
       },
     }),
   ],
