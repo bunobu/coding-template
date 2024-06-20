@@ -23,8 +23,13 @@ html {
 }
 
 body {
-  color: var(--color-black);
   font-family: sans-serif;
+  color: var(--color-black);
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /* <<< base - サイト共通のスタイル */
