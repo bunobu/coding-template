@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "markuplint:recommended"
+  ],
+  "excludeFiles": [
+    "./node_modules/**/*",
+    "./dist/**/*"
+  ],
+  "parser": {
+    "\\.html$": "@markuplint/mustache-parser"
+  },
+  "rules": {
+    "required-h1": false
+  }
+}

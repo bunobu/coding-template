@@ -1,0 +1,7 @@
+@use "@global" as g;
+
+.u-hidden-desktop {
+  @include g.mq(md) {
+    display: none;
+  }
+}

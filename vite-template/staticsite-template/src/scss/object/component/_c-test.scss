@@ -1,0 +1,7 @@
+.c-test {
+  color: red;
+
+  &.is-blue {
+    color: var(--color-blue);
+  }
+}

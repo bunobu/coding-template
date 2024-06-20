@@ -1,8 +1,0 @@
-@use "@global" as g;
-
-.u-desktop-show {
-  display: none;
-  @include g.mq("md") {
-    display: block;
-  }
-}

@@ -1,0 +1,97 @@
+/* >>> Reset CSS */
+// https://coliss.com/articles/build-websites/operation/css/my-custom-css-reset.html
+
+// ボックスサイズのモデルをborderまで含めたサイズに
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// デフォルトのスタイル調整
+* {
+  margin: 0;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  // font-size: 100%;　baseで指定
+  vertical-align: baseline;
+}
+
+// ベースの高さ設定
+html,
+body {
+  height: 100%;
+}
+
+// 画像
+img,
+picture,
+video,
+canvas,
+svg {
+  display: inline-block; //inline-blockに変更
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom; //bottomに変更
+}
+
+// フォーム
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// テキスト
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+// listのスタイルのスタイルを無しに
+ol,
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+// リンク
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* <<< Reset CSS */

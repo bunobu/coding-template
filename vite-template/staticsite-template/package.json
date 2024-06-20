@@ -1,0 +1,34 @@
+{
+  "name": "vite-bem-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && html-beautify dist/**/*.html",
+    "preview": "vite preview",
+    "lint:html": "markuplint \"**/*.html\"",
+    "lint": "npm run lint:html"
+  },
+  "devDependencies": {
+    "@macropygia/vite-plugin-imagemin-cache": "^0.1.4",
+    "@markuplint/mustache-parser": "^4.6.4",
+    "autoprefixer": "^10.4.19",
+    "css-declaration-sorter": "^7.2.0",
+    "js-beautify": "^1.15.1",
+    "markuplint": "^4.9.0",
+    "postcss": "^8.4.38",
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.77.3",
+    "vite": "^5.2.0",
+    "vite-plugin-handlebars": "^2.0.0",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-sass-glob-import": "^3.0.2"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not dead"
+  ]
+}

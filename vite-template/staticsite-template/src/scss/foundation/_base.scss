@@ -1,0 +1,45 @@
+/* >>> base - サイト共通のスタイル */
+@use "@global" as g;
+
+:root {
+  // color
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #ff0000;
+  --color-blue: #0000ff;
+
+  // font-family
+  --font-family-en: sans-serif;
+  --font-family-ja: sans-serif;
+
+  // ハーフ・レディングを削除 margin-blockにあてる
+  --leading-trim: calc((1em - 1lh) / 2);
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+html {
+  // root-fontの設定
+  font-size: 100%;
+  font-size: calc(100vw * 16 / 375);
+  @include g.mq("md") {
+    font-size: g.$font-size-base;
+  }
+}
+
+body {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* <<< base - サイト共通のスタイル */
