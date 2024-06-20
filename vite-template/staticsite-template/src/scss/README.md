@@ -6,6 +6,16 @@
 ### 使いやすいようにアレンジ<br>
 参考：https://tane-be.co.jp/knowledge/web-design/2270/
 
+### Class名について
+- 基本的な記述<br>
+  - `prefix-black__element`<br>
+  - `プレフィック名-ブロック名__エレメント名`<br>
+  - `例：c-button c-button__icon`<br>
+  - 単語の区切りは`-`で繋ぐ
+
+- modifierについて
+  - is-〇〇で統一する
+
 ## Tips
 -  `vite.config.js`でエイリアスを設定しているので`@use "@global" as g;`でどの階層からもglobal変数や関数を呼び出せる。
 
