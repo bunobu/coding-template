@@ -11,6 +11,9 @@
   // font-family
   --font-family-en: sans-serif;
   --font-family-ja: sans-serif;
+
+  // ハーフ・レディングを削除 margin-blockにあてる
+  --leading-trim: calc((1em - 1lh) / 2);
 }
 
 html,
