@@ -2,13 +2,9 @@
 @use "@global" as g;
 
 :root {
+  --color-black: #000000;
   --color-red: #ff0000;
   --color-blue: #0000ff;
-
-  --z-index-header: 100;
-  --z-index-0: 0;
-  --z-index-1: 1;
-  --z-index-negative-1: -1;
 }
 
 html,
@@ -27,15 +23,8 @@ html {
 }
 
 body {
-  color: g.$color-red;
+  color: var(--color-black);
   font-family: sans-serif;
-}
-
-.test-base {
-  @include g.mq("md") {
-    height: 60px;
-    color: g.$color-red;
-  }
 }
 
 /* <<< base - サイト共通のスタイル */

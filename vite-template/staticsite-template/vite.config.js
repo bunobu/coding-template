@@ -77,7 +77,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, "./src/index.html"),
         // htmlファイルを複数出力する場合はここに記載
-        hoge: resolve(__dirname, "./src/html/hoge.html"),
+        hoge: resolve(__dirname, "./src/hoge.html"),
       },
     },
   },
