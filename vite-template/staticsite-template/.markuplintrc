@@ -2,6 +2,10 @@
   "extends": [
     "markuplint:recommended"
   ],
+  "excludeFiles": [
+    "./node_modules/**/*",
+    "./dist/**/*"
+  ],
   "parser": {
     "\\.html$": "@markuplint/mustache-parser"
   },
