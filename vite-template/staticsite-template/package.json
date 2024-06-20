@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && html-beautify dist/**/*.html",
     "preview": "vite preview",
     "lint:html": "markuplint \"**/*.html\"",
     "lint": "npm run lint:html"
@@ -15,6 +15,7 @@
     "@markuplint/mustache-parser": "^4.6.4",
     "autoprefixer": "^10.4.19",
     "css-declaration-sorter": "^7.2.0",
+    "js-beautify": "^1.15.1",
     "markuplint": "^4.9.0",
     "postcss": "^8.4.38",
     "postcss-sort-media-queries": "^5.2.0",
