@@ -1,0 +1,13 @@
+@use "@global" as g;
+
+.l-inner {
+  padding-right: g.rem(g.$l-sp-padding);
+  padding-left: g.rem(g.$l-sp-padding);
+  @include g.mq(md) {
+    max-width: g.rem(g.$l-container-width + g.$l-pc-padding * 2);
+    padding-right: g.rem(g.$l-pc-padding);
+    padding-left: g.rem(g.$l-pc-padding);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -2,9 +2,15 @@
 @use "@global" as g;
 
 :root {
+  // color
+  --color-white: #ffffff;
   --color-black: #000000;
   --color-red: #ff0000;
   --color-blue: #0000ff;
+
+  // font-family
+  --font-family-en: sans-serif;
+  --font-family-ja: sans-serif;
 }
 
 html,
@@ -18,13 +24,14 @@ html {
   font-size: 100%;
   font-size: calc(100vw * 16 / 375);
   @include g.mq("md") {
-    font-size: 100%;
+    font-size: g.$font-size-base;
   }
 }
 
 body {
-  font-family: sans-serif;
   color: var(--color-black);
+  background-color: var(--color-white);
+  font-family: sans-serif;
   line-height: 1;
 }
 

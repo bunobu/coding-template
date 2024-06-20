@@ -8,12 +8,12 @@ $bp-xl: 1280px;
 $bp-2xl: 1536px;
 
 $breakpoints: (
-  "xs": "screen and (min-width: #{$bp-xs})",
-  "sm": "screen and (min-width: #{$bp-sm})",
-  "md": "screen and (min-width: #{$bp-md})",
-  "lg": "screen and (min-width: #{$bp-lg})",
-  "xl": "screen and (min-width: #{$bp-xl})",
-  "2xl": "screen and (min-width: #{$bp-2xl})",
+  xs: "screen and (min-width: #{$bp-xs})",
+  sm: "screen and (min-width: #{$bp-sm})",
+  md: "screen and (min-width: #{$bp-md})",
+  lg: "screen and (min-width: #{$bp-lg})",
+  xl: "screen and (min-width: #{$bp-xl})",
+  2xl: "screen and (min-width: #{$bp-2xl})",
 );
 
 // /* Desktopファースト */
@@ -25,10 +25,10 @@ $breakpoints: (
 // $bp-2xl: 1535px;
 
 // $breakpoints: (
-//   "xs": "screen and (max-width: #{$bp-xs})",
-//   "sm": "screen and (max-width: #{$bp-sm})",
-//   "md": "screen and (max-width: #{$bp-md})",
-//   "lg": "screen and (max-width: #{$bp-lg})",
-//   "xl": "screen and (max-width: #{$bp-xl})",
-//   "2xl": "screen and (max-width: #{$bp-2xl})",
+//   xs: "screen and (max-width: #{$bp-xs})",
+//   sm: "screen and (max-width: #{$bp-sm})",
+//   md: "screen and (max-width: #{$bp-md})",
+//   lg: "screen and (max-width: #{$bp-lg})",
+//   xl: "screen and (max-width: #{$bp-xl})",
+//   2xl: "screen and (max-width: #{$bp-2xl})",
 // );

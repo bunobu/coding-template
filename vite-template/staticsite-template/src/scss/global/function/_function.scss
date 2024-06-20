@@ -1,17 +1,13 @@
 // 関数を定義する
 
 @use "sass:math";
+@use "sass:map";
 @use "../setting/" as s;
 
 // 関数 - pxをremに変換して、clampで最小値と最大値を設定する
-@function rem($px, $content: strip-unit(s.$base-font-size)) {
-  // @return math.div($px, $content) * 1rem;
-
-  // rem変換
+@function rem($px, $content: strip-unit(s.$font-size-base)) {
   $strip-px: strip-unit($px);
-  $rem-conversion: math.div($strip-px, $content) * 1rem;
-  // // clampで最小値と最大値を設定して返す(最低が12px,推奨は引数の値,最大も引数の値)
-  @return clamp(12px, $rem-conversion, #{$strip-px}px);
+  @return math.div($px, $content) * 1rem;
 }
 
 // 関数 - 単位を削除する
@@ -24,7 +20,7 @@
 
 // 関数 - z-indexを$layerから取り出す
 @function z-index($z-index) {
-  @return map-get(s.$z-index-list, $z-index);
+  @return map.get(s.$z-index-list, $z-index);
 }
 
 // 関数 - line-heightの計算
