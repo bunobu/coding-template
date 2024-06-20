@@ -5,11 +5,12 @@
  * */
 
 import { defineConfig } from "vite";
-import { resolve } from "path";
-import { join } from "path";
+import { resolve, join } from "path";
 
 import handlebars from "vite-plugin-handlebars";
+
 import sassGlobImports from "vite-plugin-sass-glob-import";
+
 import viteImagemin from "vite-plugin-imagemin";
 import imageminPlugin from "@macropygia/vite-plugin-imagemin-cache";
 
@@ -48,14 +49,7 @@ export default defineConfig({
     emptyOutDir: true,
 
     rollupOptions: {
-      /**
-       * ファイルの出力設定
-       */
       output: {
-        // // jsファイルの設定
-        chunkFileNames: "assets/js/[name].js",
-        entryFileNames: "assets/js/main.js",
-
         // assetsファイルの設定
         assetFileNames: (assetInfo) => {
           let extType = assetInfo.name.split(".")[1];
@@ -73,22 +67,18 @@ export default defineConfig({
           }
           return `assets/${extType}/[name][extname]`;
         },
-      },
 
+        chunkFileNames: "assets/js/[name].js",
+        entryFileNames: "assets/js/[name].js",
+      },
       input: {
-        index: resolve(__dirname, "./src/index.html"),
         // htmlファイルを複数出力する場合はここに記載
+        index: resolve(__dirname, "./src/index.html"),
         hoge: resolve(__dirname, "./src/hoge.html"),
       },
     },
   },
-  /**
-   * <<< ビルド設定
-   */
 
-  /**
-   * >>> pluginの設定
-   */
   plugins: [
     handlebars({
       // コンポーネント化するディレクトリを指定
