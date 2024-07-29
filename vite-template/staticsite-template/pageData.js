@@ -17,4 +17,4 @@ const pageDate = {
   },
 };
 
-export default pageDate;
+export { pageDate };

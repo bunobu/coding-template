@@ -7,7 +7,7 @@
 import { defineConfig } from "vite";
 import { resolve, join } from "path";
 
-import pageDate from "./pageData";
+import { pageDate } from "./pageData";
 
 import handlebars from "vite-plugin-handlebars";
 
