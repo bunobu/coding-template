@@ -1,0 +1,15 @@
+@use "@global" as g;
+
+.l-inner {
+  padding-inline-start: calc(var(--padding-inline-xs) * var(--rem));
+  padding-inline-end: calc(var(--padding-inline-xs) * var(--rem));
+  @include g.mq(md) {
+    // paddingを含めたサイズをremで指定
+    max-width: calc(
+      (var(--container-width-md) + var(--padding-inline-md) * 2) * var(--rem)
+    );
+    padding-inline-start: calc(var(--padding-inline-md) * var(--rem));
+    padding-inline-end: calc(var(--padding-inline-md) * var(--rem));
+    margin-inline: auto;
+  }
+}

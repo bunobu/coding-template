@@ -2,18 +2,48 @@
 @use "@global" as g;
 
 :root {
+  // 計算式
+
+  // ハーフ・レディングを削除 margin-blockにあてる
+  --leading-trim: calc((1em - 1lh) / 2);
+  // remに変換する
+  --rem: 1rem / var(--font-size-base);
+
   // color
   --color-white: #ffffff;
   --color-black: #000000;
   --color-red: #ff0000;
   --color-blue: #0000ff;
 
-  // font-family
+  // font
+  --font-size-base: 16;
   --font-family-en: sans-serif;
   --font-family-ja: sans-serif;
+  --line-height-base: 1.5;
 
-  // ハーフ・レディングを削除 margin-blockにあてる
-  --leading-trim: calc((1em - 1lh) / 2);
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  // breakpoint
+  --bp-xs: 375px;
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+
+  // layout
+  --padding-inline-xs: 15;
+  --padding-inline-md: 30;
+
+  --container-width-md: 1000;
 }
 
 html,
@@ -23,23 +53,19 @@ body {
 }
 
 html {
-  // root-fontの設定
-  font-size: 100%;
-  font-size: calc(100vw * 16 / 375);
-  @include g.mq("md") {
-    font-size: g.$font-size-base;
-  }
+  font-size: calc(var(--font-size-base) * 1px);
+  line-height: var(--line-height-base);
 }
 
 body {
   color: var(--color-black);
   background-color: var(--color-white);
   font-family: sans-serif;
-  line-height: 1;
+  font-size: calc(50 * var(--rem));
 }
 
 p {
-  line-height: 1.5;
+  line-height: 3rlh;
 }
 
 /* <<< base - サイト共通のスタイル */
