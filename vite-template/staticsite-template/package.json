@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:lint": "vite && markuplint \"**/*.html\"",
     "build": "vite build && html-beautify dist/**/*.html",
     "preview": "vite preview",
     "lint:html": "markuplint \"**/*.html\"",
