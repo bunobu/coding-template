@@ -7,26 +7,14 @@
 import { defineConfig } from "vite";
 import { resolve, join } from "path";
 
+import { pageDate } from "./pageData";
+
 import handlebars from "vite-plugin-handlebars";
 
 import sassGlobImports from "vite-plugin-sass-glob-import";
 
 import viteImagemin from "vite-plugin-imagemin";
 import imageminPlugin from "@macropygia/vite-plugin-imagemin-cache";
-
-// HTMLで出し分ける情報
-const pageDate = {
-  "/index.html": {
-    isHome: true,
-    title: "indexページだよ",
-    description: "indexページの説明文だよ",
-  },
-  "/hoge.html": {
-    isHome: false,
-    title: "hogeページだよ",
-    description: "hogeページの説明文だよ",
-  },
-};
 
 export default defineConfig({
   base: "./", // 出力されるファイルのパスを相対パスにする
@@ -37,7 +25,7 @@ export default defineConfig({
 
   // sassで全体で使用したい変数ディレクトリをエイリアスで使えるようにする
   resolve: {
-    alias: { "@global/": join(__dirname, "./src/scss/global/") },
+    alias: { "@global/": join(__dirname, "./src/assets/scss/global/") },
   },
 
   /**
@@ -74,7 +62,7 @@ export default defineConfig({
       input: {
         // htmlファイルを複数出力する場合はここに記載
         index: resolve(__dirname, "./src/index.html"),
-        hoge: resolve(__dirname, "./src/hoge.html"),
+        about: resolve(__dirname, "./src/about.html"),
       },
     },
   },
