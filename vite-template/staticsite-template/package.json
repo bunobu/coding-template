@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:lint": "vite && markuplint \"**/*.html\"",
+    "dev:lint": "vite && npm run lint:html",
     "build": "vite build && html-beautify dist/**/*.html",
     "preview": "vite preview",
-    "lint:html": "markuplint \"**/*.html\"",
+    "lint:html": "markuplint \"src/*.html\"",
     "lint": "npm run lint:html"
   },
   "devDependencies": {

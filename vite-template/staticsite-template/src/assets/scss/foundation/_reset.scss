@@ -40,7 +40,6 @@ td {
   padding: 0;
   border: 0;
   font-weight: normal;
-  // font-size: 100%;　baseで指定
   vertical-align: baseline;
 }
 
@@ -59,7 +58,7 @@ svg {
   display: inline-block; //inline-blockに変更
   max-width: 100%;
   height: auto;
-  vertical-align: bottom; //bottomに変更
+  vertical-align: middle; //bottomに変更
 }
 
 // フォーム
