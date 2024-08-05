@@ -1,6 +1,6 @@
 @use "@global" as g;
 @use "library/**/*.scss";
-@use "foundation/**/*.scss";
+@use "foundation";
 @use "layout/**/*.scss";
 @use "object/component/**/*.scss";
 @use "object/project/**/*.scss";
